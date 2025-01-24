@@ -1,5 +1,4 @@
-
-import {fetchProducts} from "@/lib/featcher"
+import { fetchProducts } from "@/lib/featcher";
 import { Product } from "@/types/product";
 import { ProductCard } from "../../components/ProductCard";
 import { NavBar } from "../../components/NavBar";
@@ -12,7 +11,10 @@ export default async function Products() {
   try {
     products = await fetchProducts();
   } catch (error) {
-    console.error("Error fetching products");
+    console.error(
+      "Error fetching products:",
+      error instanceof Error ? error.message : error
+    );
   }
 
   return (
@@ -27,7 +29,9 @@ export default async function Products() {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.length > 0 ? (
-            products.map((product) => <ProductCard key={product.id} product={product} />)
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
           ) : (
             <p className="text-center text-gray-500 col-span-full">
               No products available at the moment.
