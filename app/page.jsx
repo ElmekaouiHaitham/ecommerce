@@ -1,44 +1,50 @@
 import Image from "next/image";
 
 export default async function Home() {
-    const fetchProducts = async () => {
-        const response = await fetch('https://zhiriensam.pythonanywhere.com/products', {
-          method: 'GET',
-          cache: 'no-store',
-        });
-        return response.json();
-      };
+  const fetchProducts = async () => {
+    const response = await fetch(
+      "https://zhiriensam.pythonanywhere.com/products",
+      {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+    return response.json();
+  };
   const products = await fetchProducts();
-//   const products = [
-//     {
-//       id: 1,
-//       title: "Wireless Headphones",
-//       description: "Experience immersive sound with our premium wireless headphones.",
-//       price: 149.99,
-//       image_url: "https://via.placeholder.com/150",
-//     },
-//     {
-//       id: 2,
-//       title: "Smartwatch",
-//       description: "Track your health and stay connected on the go.",
-//       price: 199.99,
-//       image_url: "https://via.placeholder.com/150",
-//     },
-//     {
-//       id: 3,
-//       title: "Gaming Laptop",
-//       description: "Powerful laptop with high-performance specs for gamers.",
-//       price: 1299.99,
-//       image_url: "https://via.placeholder.com/150",
-//     },
-//     {
-//       id: 4,
-//       title: "Bluetooth Speaker",
-//       description: "Portable speaker with deep bass and crystal-clear audio.",
-//       price: 89.99,
-//       image_url: "https://via.placeholder.com/150",
-//     },
-//   ];
+  //   const products = [
+  //     {
+  //       id: 1,
+  //       title: "Wireless Headphones",
+  //       description: "Experience immersive sound with our premium wireless headphones.",
+  //       price: 149.99,
+  //       image_url: "https://via.placeholder.com/150",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Smartwatch",
+  //       description: "Track your health and stay connected on the go.",
+  //       price: 199.99,
+  //       image_url: "https://via.placeholder.com/150",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Gaming Laptop",
+  //       description: "Powerful laptop with high-performance specs for gamers.",
+  //       price: 1299.99,
+  //       image_url: "https://via.placeholder.com/150",
+  //     },
+  //     {
+  //       id: 4,
+  //       title: "Bluetooth Speaker",
+  //       description: "Portable speaker with deep bass and crystal-clear audio.",
+  //       price: 89.99,
+  //       image_url: "https://via.placeholder.com/150",
+  //     },
+  //   ];
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -49,16 +55,24 @@ export default async function Home() {
           <nav>
             <ul className="flex space-x-6">
               <li>
-                <a href="/" className="hover:text-blue-300">Home</a>
+                <a href="/" className="hover:text-blue-300">
+                  Home
+                </a>
               </li>
               <li>
-                <a href="/products" className="hover:text-blue-300">Products</a>
+                <a href="/products" className="hover:text-blue-300">
+                  Products
+                </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-blue-300">About</a>
+                <a href="/about" className="hover:text-blue-300">
+                  About
+                </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-blue-300">Contact</a>
+                <a href="/contact" className="hover:text-blue-300">
+                  Contact
+                </a>
               </li>
             </ul>
           </nav>
@@ -81,10 +95,14 @@ export default async function Home() {
                 alt={product.title}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">{product.title}</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                {product.title}
+              </h2>
               <p className="text-gray-700 mb-4">{product.description}</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-gray-900">${product.price.toFixed(2)}</span>
+                <span className="text-lg font-bold text-gray-900">
+                  ${product.price.toFixed(2)}
+                </span>
                 <button className="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                   Buy Now
                 </button>
