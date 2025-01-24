@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // Navigation Bar Component
 export function NavBar() {
   return (
@@ -7,24 +9,24 @@ export function NavBar() {
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <a href="/" className="hover:text-blue-300">
-                Home
-              </a>
+              <Link href="/" passHref>
+                <a className="hover:text-blue-300">Products</a>
+              </Link>
             </li>
             <li>
-              <a href="/products" className="hover:text-blue-300">
-                Products
-              </a>
+              <Link href="/" passHref>
+                <a className="hover:text-blue-300">Products</a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-blue-300">
-                About
-              </a>
+              <Link href="/" passHref>
+                <a className="hover:text-blue-300">Products</a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-blue-300">
-                Contact
-              </a>
+              <Link href="/" passHref>
+                <a className="hover:text-blue-300">Products</a>
+              </Link>
             </li>
           </ul>
         </nav>
