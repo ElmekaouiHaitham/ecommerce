@@ -70,13 +70,13 @@ export default async function ProductDetails({ params }: Props) {
             <div className="space-y-4">
               <div className="p-4 bg-white rounded-lg shadow-sm">
                 <p className="text-gray-600 italic">
-                  "Amazing product! Highly recommend."
+                  Amazing product! Highly recommend.
                 </p>
                 <p className="text-gray-800 font-semibold mt-2">- John Doe</p>
               </div>
               <div className="p-4 bg-white rounded-lg shadow-sm">
                 <p className="text-gray-600 italic">
-                  "Great value for money. Will buy again."
+                  Great value for money. Will buy again.
                 </p>
                 <p className="text-gray-800 font-semibold mt-2">- Jane Smith</p>
               </div>
