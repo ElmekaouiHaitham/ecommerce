@@ -2,11 +2,13 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { fetchProduct } from "@/lib/featcher";
 
-export default async function ProductDetails({
-  params,
-}: {
-  params: { productId: string };
-}) {
+interface Props {
+  params: {
+    productId: string;
+  };
+};
+
+export default async function ProductDetails({ params }: Props) {
   const productId = decodeURIComponent(params.productId);
 
   const product = await fetchProduct(+productId); // Fetch product
