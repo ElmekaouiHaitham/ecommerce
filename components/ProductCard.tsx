@@ -1,7 +1,6 @@
 "use client";
 import { Product } from "@/types/product";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { redirect } from "next/navigation";
 
 export function ProductCard({ product }: { product: Product }) {
