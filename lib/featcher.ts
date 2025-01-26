@@ -1,8 +1,16 @@
 import { Product } from "@/types/product";
 
-export async function fetchProducts(): Promise<Product[]> {
+export async function fetchProducts(search: string = ""): Promise<Product[]> {
+  let url = "";
+  // check if search is empty string
+  if (search === "") {
+    url = `https://zhiriensam.pythonanywhere.com/products`;
+  }
+  else{
+    url = `https://zhiriensam.pythonanywhere.com/products?search=${search}`;
+  }
   const response = await fetch(
-    "https://zhiriensam.pythonanywhere.com/products",
+    url,
     {
       method: "GET",
       cache: "no-store",

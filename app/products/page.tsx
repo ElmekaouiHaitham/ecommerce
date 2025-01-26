@@ -7,9 +7,8 @@ import { Footer } from "../../components/Footer";
 // Home Component
 export default async function Products() {
   let products: Product[] = [];
-
   try {
-    products = await fetchProducts();
+    products = await fetchProducts("");
   } catch (error) {
     console.error(
       "Error fetching products:",

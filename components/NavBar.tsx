@@ -1,7 +1,16 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
+import { redirect } from "next/navigation";
 
 // Navigation Bar Component
 export function NavBar() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    redirect(`/products?search=${searchTerm}`);
+  };
   return (
     <header className="bg-gray-900 text-white shadow-md px-3 md:px-16">
       <div className="max-w-7xl mx-auto p-4 flex justify-between items-center">
@@ -10,11 +19,15 @@ export function NavBar() {
 
         {/* Search Bar */}
         <div className="relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-gray-800  text-white rounded-lg px-4 py-2 pla  ceholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-gray-800  text-white rounded-lg px-4 py-2 pla  ceholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </form>
         </div>
 
         {/* Navigation Links */}
