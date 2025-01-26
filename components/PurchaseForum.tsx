@@ -14,7 +14,7 @@ export function PurchaseButton(props: { product: Product }) {
     const formData = new FormData(event.currentTarget); // Get form data
     const name = formData.get("name");
     const phone = formData.get("phone");
-    const messageBody = `${name}\n${phone}\n${product.title}`;
+    const messageBody = `the user: ${name}\nphone number: ${phone}\n${product.title}`;
 
     // Send SMS using Twilio
     try {
