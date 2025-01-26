@@ -21,6 +21,7 @@ export function PurchaseButton(props: { product: Product }) {
       const TWILIO_ACCOUNT_SID = "AC76b42c04f11fb77bd947760c3759c078";
       const TWILIO_AUTH_TOKEN = "490cc71ccc2f71ec243fbd2022ba713c";
       const TWILIO_MESSAGING_SERVICE_SID = "MGb35223b278bd0203ff51afc12616cdae";
+
       const response = await fetch(
         "https://api.twilio.com/2010-04-01/Accounts/" +
           TWILIO_ACCOUNT_SID +
@@ -36,7 +37,7 @@ export function PurchaseButton(props: { product: Product }) {
             "Content-Type": "application/x-www-form-urlencoded",
           },
           body: new URLSearchParams({
-            To: "+212722057615", // receiver's phone number
+            To: "+212688007649", // receiver's phone number
             Body: messageBody,
             MessagingServiceSid: TWILIO_MESSAGING_SERVICE_SID,
           }),
