@@ -1,13 +1,19 @@
+import { BuyButton } from "@/components/Buybutton";
 import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { fetchProduct } from "@/lib/featcher";
 
-
-export default async function ProductDetails({ params }: {params: Promise<{ productId: string }>}) {
+export default async function ProductDetails({
+  params,
+}: {
+  params: Promise<{ productId: string }>;
+}) {
   let { productId } = await params;
   productId = decodeURIComponent(productId);
 
   const product = await fetchProduct(+productId); // Fetch product
+
+
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -36,9 +42,7 @@ export default async function ProductDetails({ params }: {params: Promise<{ prod
               <span className="text-3xl font-bold text-gray-900">
                 ${product.price.toFixed(2)}
               </span>
-              <button className="bg-gradient-to-r from-gray-500 to-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transform transition">
-                Tkhawar Now
-              </button>
+              <BuyButton productId={product.id}/>
             </div>
           </div>
         </div>
