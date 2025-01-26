@@ -18,9 +18,9 @@ export function PurchaseButton(props: { product: Product }) {
 
     // Send SMS using Twilio
     try {
-      const TWILIO_ACCOUNT_SID = "ACfd18530aaf85463b89de2ee3d8f1de44";
-      const TWILIO_AUTH_TOKEN = "5d69872d0e6fa639744be5c5665fd1d0";
-      const TWILIO_MESSAGING_SERVICE_SID = "MG172b4c02f40e7b5df24d4ca5f3e3bca1";
+      const TWILIO_ACCOUNT_SID = "AC76b42c04f11fb77bd947760c3759c078";
+      const TWILIO_AUTH_TOKEN = "490cc71ccc2f71ec243fbd2022ba713c";
+      const TWILIO_MESSAGING_SERVICE_SID = "MGb35223b278bd0203ff51afc12616cdae";
       const response = await fetch(
         "https://api.twilio.com/2010-04-01/Accounts/" +
           TWILIO_ACCOUNT_SID +
