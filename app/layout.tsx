@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zhirictronics - Official Store",
     description: "Your destination for top-quality electronics and gadgets.",
-    url: "zhirictronics.vercel.app",
+    url: "https://zhirictronics.vercel.app",
     siteName: "Zhirictronics",
     images: [
       {
-        url: "zhirictronics.vercel.app/og-image.png",
+        url: "https://zhirictronics.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Zhirictronics Official Store",
