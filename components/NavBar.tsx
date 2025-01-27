@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 // Navigation Bar Component
 export function NavBar() {
@@ -14,9 +15,18 @@ export function NavBar() {
   return (
     <header className="bg-gray-900 text-white shadow-md px-3 md:px-16">
       <div className="max-w-7xl mx-auto p-4 flex justify-between items-center">
-        {/* Logo or Branding */}
-        <div className="text-2xl font-semibold">Zhiri</div>
-
+        <div className="flex items-center">
+          {/* Logo or Branding */}
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={60}
+            height={60}
+            className="h-14 w-auto pt-2 pr-1"
+            priority // Ensures the image loads quickly
+          />
+          <div className="text-2xl font-semibold">Zhirictronics</div>
+        </div>
         {/* Search Bar */}
         <div className="relative">
           <form onSubmit={handleSubmit}>
