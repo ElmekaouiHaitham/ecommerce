@@ -1,14 +1,14 @@
 "use client";
 import { Product } from "@/types/product";
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export function ProductCard({ product }: { product: Product }) {
   const [loading, setLoading] = useState(false);
-
+  const router = useRouter();
   const handleNavigation = () => {
     setLoading(true);
-    redirect(`/products/${product.id}`);
+    router.push(`/products/${product.id}`);
   };
 
   return (

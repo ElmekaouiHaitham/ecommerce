@@ -2,14 +2,17 @@
 import { useRouter } from "next/navigation"; // Import useRouter
 
 import { Product } from "@/types/product";
+import { useState } from "react";
 
 // Footer Component
 export function PurchaseButton(props: { product: Product }) {
   const { product } = props;
   const router = useRouter(); // Initialize router
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
 
     const formData = new FormData(event.currentTarget); // Get form data
     const name = formData.get("name");
@@ -90,9 +93,10 @@ export function PurchaseButton(props: { product: Product }) {
 
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-gradient-to-r from-gray-500 to-gray-900 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transform transition"
           >
-            Confirm Purchase
+            {loading ? "Loading..." : "Confirm Purchase"}
           </button>
         </form>
       </div>
