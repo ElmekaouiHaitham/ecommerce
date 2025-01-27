@@ -40,18 +40,13 @@ export function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-blue-300" passHref>
-                  Home
+                <Link href="/products" className="hover:text-blue-300" passHref>
+                  Products
                 </Link>
               </li>
               <li>
                 <Link href="/" className="hover:text-blue-300" passHref>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="hover:text-blue-300" passHref>
-                  Home
+                  about
                 </Link>
               </li>
             </ul>
